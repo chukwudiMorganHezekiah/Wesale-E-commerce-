@@ -1,28 +1,6 @@
-<nav class="navbar navbar-expand navbar-light  topbar static-top shadow d-none d-lg-block" style="background:rgb(225,225,225)">
-
-<div class="container">
-
-<div class="row">
-
-<div class="col-lg-4" >
-
-<div style="border-right:1px solid black;">
-Phone:08122520540
-</div>
-
-</div>
-</div>
 
 
-</div>
-
-</nav>
-
-
-
-</nav>
-
-<nav class="navbar navbar-expand navbar-light bg-dark topbar  static-top shadow d-none d-lg-block">
+<nav class="navbar navbar-expand navbar-light bg-dark topbar  static-top shadow d-none d-lg-block" style="position:fixed;z-index:99;width:100%;margin-bottom:190px;">
 
 <div class="container">
 <a href="" class="navbar-brand " style="color:white;font-size:30px;font-weight:20px;">WeDeySale.com</a>
@@ -33,13 +11,13 @@ Phone:08122520540
 
 
 <!-- Topbar Search -->
-<form class="d-none d-sm-inline-block form-inline  navbar-search form-inline" >
+<form class="d-none d-sm-inline-block form-inline  navbar-search form-inline"  action="index.php/search/products" method="POST">
   <div class="input-group">
-    <input type="text" class="form-control " style="margin-left:60px;padding-right:170px;" placeholder="Search Product..." >
+    <input type="text" class="form-control " style="margin-left:60px;padding-right:170px;" placeholder="Search Product..." name="search_products">
     <div class="input-group-append">
-      <button class="btn btn-default" type="button">
-        Search
-      </button>
+      <input type="submit" class="btn btn-default" type="button" value="Search">
+        
+      
     </div>
   </div>
 </form>
@@ -110,6 +88,7 @@ Phone:08122520540
 
 </ul>
 
+</div>
 </div>
 
 </nav>

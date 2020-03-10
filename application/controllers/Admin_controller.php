@@ -363,4 +363,52 @@ if($_SESSION['user']){
         unset($_SESSION['user']);
         redirect("/dashboard/login");
     }
+
+
+
+
+    public function notification_view($id){
+        if(isset($_SESSION['user'])){
+            $this->load->model("admin_model");
+           $data['notifications'] =$this->admin_model->select_notification($id);
+           $data["notification_customer_details"]=$this->admin_model->select_notification_customer_details($id);
+            $this->load->view("admin/notification_home",$data);
+
+        }else{
+            redirect("/dashboard/login");
+
+            }
+    }
+
+    public function delete_request($id){
+
+        if(isset($_SESSION['user'])){
+            $this->load->model("admin_model");
+           if($this->admin_model->delete_request($id)){
+               redirect("admin");
+
+           }
+
+        }else{
+            redirect("/dashboard/login");
+
+            }
+
+
+    }
+
+    public function search_products(){
+       $search_key= $this->input->post("search_products");
+       $this->load->model("admin_model");
+       $result_from_search['result_from_search']=$this->admin_model->search_products($search_key);
+       $this->load->view("frontview/search_view",$result_from_search) ;
+        
+    }
+
+    public function search_results($id){
+        $this->load->model("admin_model");
+        $result_from_search['result_from_search']=$this->admin_model->search_results($id);
+        
+        $this->load->view("frontview/search_results",$result_from_search) ;
+    }
 }

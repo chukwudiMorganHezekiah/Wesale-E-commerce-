@@ -48,4 +48,27 @@ return $this->db->select("*")->from("products")->order_by("id","DESC")->get()->r
      return  $this->db->select("username")->from("users")->where($data)->get()->result();
 
     }
+
+    public function select_notification($id){
+      return  $this->db->select("*")->from("products")->where("id",$id)->get()->result_array();
+
+    }
+
+    public function select_notification_customer_details($id){
+      return  $this->db->select("*")->from("notifications")->where("product_id",$id)->get()->result_array();
+
+    }
+
+    public function delete_request($id){
+
+      return $this->db->where("id",$id)->delete("notifications");
+    }
+
+    public function search_products($search_key){
+     return  $this->db->query("SELECT * FROM PRODUCTS  WHERE MATCH(PRODUCT_NAME) AGAINST('$search_key') ")->result_array();
+    }
+
+    public function search_results($id){
+      return $this->db->select("*")->from("products")->where("id",$id)->get()->result_array();
+    }
 }

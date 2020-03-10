@@ -76,6 +76,18 @@ $route['dashboard/login']="admin_controller/dashboard_login";
 
 $route['admin/logout']="admin_controller/dashboard_logout";
 
+$route['admin/notifications/(:num)']="admin_controller/notification_view/$1";
+
+$route['admin/notifications/delete_request/(:num)']="admin_controller/delete_request/$1";
+
+$route['search/products']="admin_controller/search_products";
+
+$route['search/search_results/(:num)']="admin_controller/search_results/$1";
+
+
+
+
+
 
 
 
@@ -90,3 +102,16 @@ $route['default_controller'] = 'frontview_controller';
 
 
 /**Routes for the frontview ends here */
+
+
+/**This  is the routes for the single complete shop */
+
+$route['completeshop/(:num)'] = 'complete_shop/home/$1';
+
+$route['completeshop/complete_shop/agree'] = 'complete_shop/agree';
+
+$route['completeshop/complete_shop/personal_detail'] = 'complete_shop/personal_detail';
+
+
+
+/**end of routes for the single complete shop */
