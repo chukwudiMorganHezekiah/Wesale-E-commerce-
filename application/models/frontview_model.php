@@ -11,7 +11,7 @@ class frontview_model extends CI_Model{
 
     public function all_products_for_carousel(){
 
-        return $this->db->select("*")->from("products")->get()->result_array();
+        return $this->db->select("*")->from("products")->order_by("id","RANDOM")->get()->result_array();
     }
 
 }
